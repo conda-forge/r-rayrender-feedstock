@@ -22,44 +22,46 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]    
     - {{ posix }}filesystem        # [win]
-    - {{ posix }}make
     - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp >=1.0.0
     - r-rcppthread
-    - r-assertthat
     - r-decido
     - r-magrittr
     - r-png
     - r-progress
     - r-purrr
     - r-raster
-    - r-rayimage
-    - r-spacefillr
-    - r-tibble
+    - r-rayimage >=0.7.1
+    - r-spacefillr >=0.3.0
   run:
     - r-base
     - {{ native }}gcc-libs  # [win]
     - r-rcpp >=1.0.0
     - r-rcppthread
-    - r-assertthat
     - r-decido
     - r-magrittr
     - r-png
     - r-progress
     - r-purrr
     - r-raster
-    - r-rayimage
-    - r-spacefillr
-    - r-tibble
+    - r-rayimage >=0.7.1
+    - r-spacefillr >=0.3.0
 
 test:
   commands:
