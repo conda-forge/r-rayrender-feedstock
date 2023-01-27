@@ -1,5 +1,4 @@
 {% set version = "0.29.4" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -27,39 +26,41 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
-    - {{ posix }}make
     - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp >=1.0.0
     - r-rcppthread
-    - r-assertthat
     - r-decido
     - r-magrittr
     - r-png
     - r-progress
     - r-purrr
     - r-raster
-    - r-rayimage
-    - r-spacefillr
-    - r-tibble
+    - r-rayimage >=0.9.0
+    - r-spacefillr >=0.3.0
   run:
     - r-base
-    - {{ native }}gcc-libs  # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-rcpp >=1.0.0
     - r-rcppthread
-    - r-assertthat
     - r-decido
     - r-magrittr
     - r-png
     - r-progress
     - r-purrr
     - r-raster
-    - r-rayimage
-    - r-spacefillr
-    - r-tibble
+    - r-rayimage >=0.9.0
+    - r-spacefillr >=0.3.0
 
 test:
   commands:
@@ -68,8 +69,7 @@ test:
 
 about:
   home: https://www.rayrender.net, https://github.com/tylermorganwall/rayrender
-
-  license: GPL-3.0-or-later
+  license: GPL-3.0-only
   summary: Render scenes using pathtracing. Build 3D scenes out of spheres, cubes, planes, disks, triangles, cones, curves, line segments, cylinders, ellipsoids, and 3D models in the 'Wavefront' OBJ file format or the PLY Polygon File Format. Supports several material types, textures, multicore rendering, and tone-mapping.
     Based on the "Ray Tracing in One Weekend" book series. Peter Shirley (2018) <https://raytracing.github.io>.
   license_family: GPL3
@@ -78,5 +78,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - ocefpaf
     - conda-forge/r
+    - ocefpaf
