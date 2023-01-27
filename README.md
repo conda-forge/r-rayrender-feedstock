@@ -3,7 +3,7 @@ About r-rayrender
 
 Home: https://www.rayrender.net, https://github.com/tylermorganwall/rayrender
 
-Package license: GPL-3.0-or-later
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rayrender-feedstock/blob/main/LICENSE.txt)
 
