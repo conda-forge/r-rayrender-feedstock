@@ -3,6 +3,7 @@ About r-rayrender-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rayrender-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rayrender
 -----------------
 
@@ -11,6 +12,7 @@ Home: https://www.rayrender.net, https://github.com/tylermorganwall/rayrender
 Package license: GPL-3.0-or-later
 
 Summary: Render scenes using pathtracing. Build 3D scenes out of spheres, cubes, planes, disks, triangles, cones, curves, line segments, cylinders, ellipsoids, and 3D models in the 'Wavefront' OBJ file format or the PLY Polygon File Format. Supports several material types, textures, multicore rendering, and tone-mapping. Based on the "Ray Tracing in One Weekend" book series. Peter Shirley (2018) <https://raytracing.github.io>.
+
 About r-rayrender
 -----------------
 
@@ -153,7 +155,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
