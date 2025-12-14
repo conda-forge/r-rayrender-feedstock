@@ -1,4 +1,4 @@
-{% set version = "0.34.3" %}
+{% set version = "0.38.10" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rayrender_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rayrender/rayrender_{{ version }}.tar.gz
-  sha256: afec5de304282ceeb57cfd0978d8e1392f565508fed36251dcbd327b499b99b5
+  sha256: b5fdd68c4e0a492ad55bf95502be1dbfe059553b6eb4aac28aa2d1d57e2c42e2
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
