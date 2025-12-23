@@ -10,6 +10,8 @@ grep -va '^Priority: ' DESCRIPTION.old > DESCRIPTION
 sed -i 's/-mmacosx-version-min=10.13//g' ${PREFIX}/lib/R/etc/Makeconf
 sed -i 's/@PKG_CPPFLAGS@/@PKG_CPPFLAGS@ -D_LIBCPP_DISABLE_AVAILABILITY/' src/Makevars.in
 
+export CXX20=${CXX}
+
 # Extra configure-arg is needed because configure script expects source
 # to be in a folder called "rayrender" - setting ac_unique_file to ""
 # just makes it look in $SRC_DIR where the source actually resides
