@@ -9,6 +9,7 @@ grep -va '^Priority: ' DESCRIPTION.old > DESCRIPTION
 # to support newer C++ features
 sed -i 's/-mmacosx-version-min=10.13//g' ${PREFIX}/lib/R/etc/Makeconf
 sed -i 's/@PKG_CPPFLAGS@/@PKG_CPPFLAGS@ -D_LIBCPP_DISABLE_AVAILABILITY/' src/Makevars.in
+sed -i 's/PKG_CXXFLAGS = /PKG_CXXFLAGS = --std=c++20' src/Makevars.in
 
 mkdir -p ~/.R
 echo -e "CC=$CC
